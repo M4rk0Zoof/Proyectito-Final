@@ -19,10 +19,12 @@ def main():
             s.connect((server_ip, server_port))
             
             active_connections = len(s.getsockname())
-            print("Número de conexiones activas:",active_connections)
+            salida1.delete(0, 'end')
+            salida1.insert(0, active_connections)
             
             process_count = len(psutil.pids())
-            print("Número de procesos en ejecución:",process_count)
+            salida2.delete(0, 'end')
+            salida2.insert(0, process_count)
             
             s.close()
             
