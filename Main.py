@@ -1,7 +1,6 @@
 from tkinter import Tk, Label, Button, Entry
 import socket
 import psutil
-from Fun import infor, borrado
 
 ven = Tk()
 ven.title("Conexiones del servidor")
@@ -32,6 +31,8 @@ def main():
             print("No se pudo establecer la conexión con el servidor.")
         except Exception as e:
             print("Ocurrió un error:",e)
+        
+        ven.after(5000, infor)
     
     def borrado():
         entrada1.delete(0, 'end')
@@ -54,14 +55,14 @@ def main():
     borrar.place(relx=0.41, rely=0.08, relwidth=0.1, relheight=0.08)
 
     texto3 = Label(ven, text="Numero de conexiones activas: ", bg="yellow")
-    texto3.place(relx=0.25, rely=0.25, relwidth=0.26, relheight=0.08)
+    texto3.place(relx=0.32, rely=0.32, relwidth=0.26, relheight=0.08)
     salida1 = Entry(ven, bg="white")
-    salida1.place(relx=0.25, rely=0.35, relwidth=0.29, relheight=0.08)
+    salida1.place(relx=0.32, rely=0.42, relwidth=0.29, relheight=0.08)
 
     texto4 = Label(ven, text="Numero de procesos en ejecucion: ", bg="yellow")
-    texto4.place(relx=0.25, rely=0.45, relwidth=0.29, relheight=0.08)
+    texto4.place(relx=0.32, rely=0.52, relwidth=0.29, relheight=0.08)
     salida2 = Entry(ven, bg="white")
-    salida2.place(relx=0.25, rely=0.55, relwidth=0.29, relheight=0.08)
+    salida2.place(relx=0.32, rely=0.62, relwidth=0.29, relheight=0.08)
 
 if __name__ == "__main__":
     main()
